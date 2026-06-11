@@ -808,7 +808,7 @@ window.loginGoogle = async function() {
   try {
     showLoading('Menghubungkan dengan Google...');
     const provider = new GoogleAuthProvider();
-    await signInWithPopup(auth, provider);
+    await signInWithRedirect(auth, provider);
   } catch(e) {
     hideLoading();
     showAuthError(friendlyError(e.code));
